@@ -1,16 +1,23 @@
-import numpy
-Names = ["Abby", "Raul", "Nick", "Jessica", "Winston"]
-Age = numpy.array([14, 17, 32, 34, 40])
-i=0
+def allowed_dating_age(my_age):
+    girls_age = my_age//2 + 7
+    return girls_age
 
-for f in Age:
-    print('Name:', Names[i])
-    print('Age:', Age[i])
-    if Age[i] < 21:
-        print('No Access Allowed')
-        print('=================')
-        i+=1
-    else:
-        print('Access granted')
-        print('================')
-        i+=1
+s=1
+while s == 1:
+    name = input("Name:")
+    age = int(input("Age:"))
+
+    if age < 13:
+        print ("You are too young to date.")
+    elif age >13:
+        age_limit = allowed_dating_age(age)
+        print(name, "can date", age_limit, "year old or older.")
+
+    s = int(input("Press 1 to continue or Press 0 stop:"))
+
+    if s > 1:
+        s = int(input("This value is invalid. \nPlease try again:"))
+
+
+
+
